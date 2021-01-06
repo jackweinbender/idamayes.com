@@ -9,7 +9,8 @@ import React, { FC } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { Header } from "./Header"
-import "./layout.css"
+import "normalize.css"
+import GlobalStyles from "../styles/GlobalStyles"
 
 const Layout: FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,6 +25,7 @@ const Layout: FC = ({ children }) => {
 
   return (
     <>
+      <GlobalStyles />
       <Header />
       <main>{children}</main>
     </>

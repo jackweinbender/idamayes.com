@@ -1,25 +1,10 @@
 import React, { ReactElement } from "react"
 import styled from "styled-components"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
-
-const IMFImg = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "ida-mayes-logo-black.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-}
+import { Link } from "gatsby"
+import IMFImg from "../images/ida-mayes-logo-black.png"
 
 const Wrapper = styled.header`
-  padding-inline: 2rem 4rem;
+  padding-inline: 2rem;
   background-color: rgb(248, 244, 241);
 
   display: flex;
@@ -28,30 +13,36 @@ const Wrapper = styled.header`
 
   & > a {
     flex: 1 1 20%;
+    min-width: 150px;
+    max-height: 200px;
+    display: flex;
+    align-items: center;
   }
 `
 const Nav = styled.nav`
   display: flex;
   flex-wrap: wrap;
-  flex: 1 1 80%;
+  flex: 1 2 auto;
   align-items: center;
   justify-content: end;
   gap: 0.25rem 1.5rem;
+  margin-inline: 2rem;
   &:hover a {
-    color: gray;
+    color: rgba(11, 10, 10, 0.4);
   }
 
   a {
     transition: color 0.25s;
+    transition-timing-function: ease-in-out;
     color: rgb(11, 10, 10);
-    font-family: sans-serif;
+    font-family: "Quicksand", sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 12px;
+    font-size: 0.9rem;
 
     &:hover {
-      color: black;
+      color: rgb(11, 10, 10);
     }
   }
 `
@@ -59,9 +50,10 @@ const Row = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-block: 0.25rem;
   gap: 1.5rem;
 `
-const Logo = styled(IMFImg)``
+const Logo = styled.img``
 const MenuLink = styled(Link)``
 
 interface Props {}
@@ -70,7 +62,7 @@ function Header({}: Props): ReactElement {
   return (
     <Wrapper>
       <Link to="/" data-tesid="nav-home">
-        <Logo src="#" />
+        <Logo src={IMFImg} />
       </Link>
       <Nav>
         <Row>
