@@ -5,7 +5,7 @@ import IMFImg from "../images/ida-mayes-logo-black.png"
 
 const Wrapper = styled.header`
   padding-inline: 2rem;
-  background-color: rgb(248, 244, 241);
+  background-color: var(--taupe);
 
   display: flex;
   align-items: center;
@@ -28,21 +28,21 @@ const Nav = styled.nav`
   gap: 0.25rem 1.5rem;
   margin-inline: 2rem;
   &:hover a {
-    color: rgba(11, 10, 10, 0.4);
+    color: var(--dark-text-hover);
   }
 
   a {
     transition: color 0.25s;
     transition-timing-function: ease-in-out;
-    color: rgb(11, 10, 10);
-    font-family: "Quicksand", sans-serif;
+    color: var(--dark-text);
+    font-family: var(--heading-font);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.9rem;
 
     &:hover {
-      color: rgb(11, 10, 10);
+      color: var(--dark-text);
     }
   }
 `
