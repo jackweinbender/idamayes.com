@@ -1371,6 +1371,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/cormorant-sc@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/cormorant-sc/-/cormorant-sc-4.1.0.tgz#700553c55a45525aa136fdbbb3b2670b3b949eea"
+  integrity sha512-cyXp0MZCr/vU+WF6Og5H8/Xn0rKuiMZ0DlbSjChm6HJJHbok3vuZwOAtzEn9rCV2aAxqBk6ARIl1l0aWcfSAoQ==
+
+"@fontsource/didact-gothic@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/didact-gothic/-/didact-gothic-4.1.0.tgz#5ab8c689667176ae693fa393d9b6a357610e6c44"
+  integrity sha512-QX8B7CpAHPqiHWQDF3Cg1E0kJSaxYiysIYk7ZgqrdH+uZ4s9yuFwYD33MRs7JHBxKVGqJbbsk3tatjFcdWM9oQ==
+
 "@fontsource/quicksand@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@fontsource/quicksand/-/quicksand-4.1.0.tgz#4cc047099e3fc44d4ac46eb4e8b5334b7a826280"
@@ -15982,6 +15992,11 @@ styled-components@^5.2.1:
     hoist-non-react-statics "^3.0.0"
     shallowequal "^1.1.0"
     supports-color "^5.5.0"
+
+styled-normalize@^8.0.7:
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-8.0.7.tgz#e883bff6a0c59a65a39365a4eb9c6cf48372c61f"
+  integrity sha512-qQV4O7B9g7ZUnStCwGde7Dc/mcFF/pz0Ha/LL7+j/r6uopf6kJCmmR7jCPQMCBrDkYiQ4xvw1hUoceVJkdaMuQ==
 
 stylehacks@^4.0.0:
   version "4.0.3"

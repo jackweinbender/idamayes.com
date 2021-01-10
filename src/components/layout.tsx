@@ -29,7 +29,7 @@ const Layout: FC = ({ children }) => {
     <>
       <GlobalStyles />
       <Header links={navLinks} />
-      <main>{children}</main>
+      {/* <main>{children}</main> */}
     </>
   )
 }
