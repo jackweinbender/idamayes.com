@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react"
 import { URL } from "url"
 import styled from "styled-components"
+import { lighten } from "polished"
 import { Link } from "gatsby"
 import IMFImg from "../../images/ida-mayes-logo-black.png"
 import { NavLink, navLinks } from "./links"
@@ -14,6 +15,11 @@ const MenuLink = styled(Link)`
   text-transform: uppercase;
   font-family: var(--heading-font);
   letter-spacing: 2.5px;
+
+  @media ${mediaQueries.desktop} {
+    padding-block: 0;
+    margin-block: 1rem;
+  }
 `
 const Close = styled.button`
   position: absolute;
@@ -32,31 +38,55 @@ const Close = styled.button`
 `
 
 const Nav = styled.nav<{ isOpen: boolean }>`
-  background-color: rgb(250, 250, 250);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 0.5s cubic-bezier(0.7, -0.2, 0.33, 1.24),
-    opacity 0.35s ease-in-out;
-  padding-block-start: 2em;
-  ${({ isOpen }) =>
-    isOpen
-      ? `
+  background-color: ${colors.taupe};
+  @media ${mediaQueries.mobile} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.7, -0.2, 0.33, 1.24),
+      opacity 0.35s ease-in-out;
+    padding-block-start: 2em;
+    ${({ isOpen }) =>
+      isOpen
+        ? `
     transform: translateX(0);
-    opacity: 1;'
+    opacity: 1;
     `
-      : null}
+        : null}
+  }
+  @media ${mediaQueries.desktop} {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 1.2em;
+
+    &:hover a {
+      opacity: 0.5;
+      transition: opacity 0.35s ease-in-out;
+    }
+    &:hover a:hover {
+      opacity: 1;
+    }
+  }
 `
 
 const LinkList = styled.div`
-  padding-inline: 2rem;
+  margin-inline: 2rem;
   display: grid;
   align-content: start;
   transition: opacity 0.5s ease-in-out;
+
+  @media ${mediaQueries.desktop} {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin: 0;
+  }
 `
 
 const Wrapper = styled.header`
@@ -64,12 +94,20 @@ const Wrapper = styled.header`
   padding-block: 0.5em;
   background-color: var(--taupe);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  @media ${mediaQueries.desktop} {
+    height: 18rem;
+    padding-inline: 4rem;
+  }
 `
 
 const Logo = styled.img`
   height: 65px;
   width: auto;
+  @media ${mediaQueries.desktop} {
+    height: 13rem;
+  }
 `
 
 const Hamburger = styled.button`

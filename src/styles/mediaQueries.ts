@@ -1,7 +1,7 @@
 import { css } from "styled-components"
 
 const breakpoints = {
-  desktop: 480,
+  desktop: 500,
 }
 export const mediaQueries = {
   mobile: `(max-width: ${breakpoints.desktop}px)`,
