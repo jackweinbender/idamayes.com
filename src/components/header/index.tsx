@@ -4,12 +4,12 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import IMFImg from "../../images/ida-mayes-logo-black.png"
 import { NavLink, navLinks } from "./links"
-import { colors, media } from "../../styles"
+import { colors, mediaQueries } from "../../styles"
 
 const MenuLink = styled(Link)`
   display: grid;
   padding: 0.75em;
-  color: var(--dark-font);
+  color: ${colors.gray};
   text-decoration: none;
   text-transform: uppercase;
   font-family: var(--heading-font);
@@ -24,7 +24,11 @@ const Close = styled.button`
   background: none;
   font-family: var(--heading-font);
   font-size: 1.25em;
-  color: var(--dark-font);
+  color: ${colors.gray};
+
+  @media ${mediaQueries.desktop} {
+    display: none;
+  }
 `
 
 const Nav = styled.nav<{ isOpen: boolean }>`
@@ -34,10 +38,10 @@ const Nav = styled.nav<{ isOpen: boolean }>`
   right: 0;
   bottom: 0;
   left: 0;
-  transition: transform 0.5s cubic-bezier(0.7, -0.2, 0.33, 1.24),
-    opacity 0.35s ease-in-out;
   transform: translateX(-100%);
   opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.7, -0.2, 0.33, 1.24),
+    opacity 0.35s ease-in-out;
   padding-block-start: 2em;
   ${({ isOpen }) =>
     isOpen
@@ -82,8 +86,11 @@ const Hamburger = styled.button`
     height: 100%;
   }
   rect {
-    fill: ${colors.darkText};
-    stroke: ${colors.darkText};
+    fill: ${colors.gray};
+    stroke: ${colors.gray};
+  }
+  @media ${mediaQueries.desktop} {
+    display: none;
   }
 `
 
