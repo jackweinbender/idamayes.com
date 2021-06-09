@@ -24,7 +24,7 @@ const Hero = () => {
 const IndexPage = () => (
   <Layout>
     <Hero />
-    <h1>HOME</h1>
+    
   </Layout>
 )
 

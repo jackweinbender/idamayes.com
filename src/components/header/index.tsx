@@ -14,9 +14,11 @@ const MenuLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   font-family: var(--heading-font);
+  font-size: 1.6rem;
   letter-spacing: 2.5px;
 
   @media ${mediaQueries.desktop} {
+    font-size: 1.2rem;
     padding-block: 0;
     margin-block: 1rem;
   }
@@ -24,12 +26,12 @@ const MenuLink = styled(Link)`
 const Close = styled.button`
   position: absolute;
   cursor: pointer;
-  right: 1em;
-  top: 1em;
+  right: 1rem;
+  top: 1.5rem;
   border: none;
   background: none;
   font-family: var(--heading-font);
-  font-size: 1.25em;
+  font-size: 2.5rem;
   color: ${colors.gray};
 
   @media ${mediaQueries.desktop} {
@@ -45,10 +47,11 @@ const Nav = styled.nav<{ isOpen: boolean }>`
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 999;
     transform: translateX(-100%);
     opacity: 0;
-    transition: transform 0.5s cubic-bezier(0.7, -0.2, 0.33, 1.24),
-      opacity 0.35s ease-in-out;
+    transition: transform 0.75s cubic-bezier(0.57, 0.4, 0, 0.99),
+      opacity 0.25s ease-in;
     padding-block-start: 2em;
     ${({ isOpen }) =>
       isOpen
@@ -64,10 +67,9 @@ const Nav = styled.nav<{ isOpen: boolean }>`
     align-items: center;
     justify-content: end;
     font-size: 1.2em;
-
     &:hover a {
       opacity: 0.5;
-      transition: opacity 0.35s ease-in-out;
+      transition: opacity 0.25s ease-in;
     }
     &:hover a:hover {
       opacity: 1;
@@ -79,7 +81,7 @@ const LinkList = styled.div`
   margin-inline: 2rem;
   display: grid;
   align-content: start;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.25s ease-in;
 
   @media ${mediaQueries.desktop} {
     display: flex;
